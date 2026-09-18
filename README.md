@@ -1,50 +1,41 @@
-إليك تنسيق ملف الـ README.md بشكل احترافي، منظم، وواضح للقراءة على جيثب (GitHub) أو أي محرر نصوص:👑 متجر حكيم | Hakim StoreLuxury Bilingual (Arabic RTL & English LTR) E-Commerce & Admin Platformمنصة تجارة إلكترونية متكاملة، جاهزة للإنتاج، وعالية الأداء مع لوحة تحكم إدارية مدمجة، مبنية باستخدام Next.js (App Router)، TypeScript، Tailwind CSS، Framer Motion، Lucide React، Zustand، Recharts، React Hook Form + Zod، و Supabase.🌟 أبرز الميزات والقدرات (Key Capabilities & Features)1. التجربة ثنائية اللغة والتوافق التام مع الاتجاهين (RTL / LTR)تبديل الفوري للغة: التبديل بسلاسة بين العربية (RTL) بخط Cairo و الإنجليزية (LTR) بخط Inter عبر المتجر ولوحة التحكم بالكامل.دعم اتجاهات الواجهة: عكس الأيقونات تلقائياً، محاذاة مرآوية، وعملات منسقة (SAR / ر.س).الوضع الداكن والفاتح: تبديل سلس بين ثيمات الفخامة مع انتقالات مرنة.2. واجهة المتجر (Storefront)الصفحة الرئيسية: بانر ترويجي متحرك (Hero)، بطاقات أقسام منسقة مع عدادات، تبويب لأبرز القطع الفاخرة، عداد تنازلي للعروض، وآراء العملاء.الكتالوج والبحث الفوري: نافذة بحث فورية بختم زمني (Ctrl+K / ⌘K)، أزرار ترشيح الأقسام، شريط تصفية السعر، تصفية التقييمات، مفاتيح توفر المخزون، وخيارات الفرز (السعر، التقييم، الأحدث، المميز).تفاصيل المنتج: معرض صور متعدد الزوايا مع تبديل المصغرات والتكبير، محدد الألوان والأحجام مع تحديث السعر الحي، مؤشر حالة المخزون اللحظي، محدد الكمية، قائمة المواصفات المنسدلة، وقسم تقييمات العملاء.سلة تسوق مستمرة: درج جانبي بتأثيرات Framer Motion، حفظ البيانات في LocalStorage، شريط تقدم الشحن المجاني، محرك أكواد خصم (HAKIM10, WELCOME20, LUXURY50)، وحساب ضريبة القيمة المضافة الديناميكية (15%).إتمام الطلب (Checkout): نموذج مدقق (Zod + React Hook Form)، طرق دفع متعددة (مدى، Apple Pay، محاكاة بطاقة الائتمان، الدفع عند الاستلام)، وإنشاء الطلبات.تتبع الطلبات وتأكيدها: احتفال احتفالي بقصاصات الذهب (Confetti)، خط زمني حي لتنفيذ الطلب (قيد الانتظار $\to$ المعالجة $\to$ الشحن $\to$ التوصيل)، ومولد فواتير ضريبية قابل للطباعة.حساب العميل والتقييمات: نظرة عامة على الملف الشخصي، سجل الطلبات مع تفاصيل التواريخ، العناوين المحفوظة، ونوافذ التقييم التفاعلية مع رفع الصور والتقييم بالنجوم.3. لوحة تحكم الإدارة التنفيذية (/admin)نظرة عامة على التحليلات: بطاقات مؤشرات الأداء الرئيسية (إجمالي الإيرادات، إجمالي الطلبات، المخزون النشط، العملاء، متوسط قيمة الطلب) مدعومة بمخططات تفاعلية عبر Recharts (مخطط الإيرادات اليومية، مخطط مبيعات الفئات، وتغذية المعاملات الحية).إدارة المنتجات (CRUD بالكامل): جدول بيانات مع فلاتر للبحث والفئات، تنبيهات مستويات المخزون، ونوافذ لإضافة وتعديل وحذف المنتجات بتفاصيل ثنائية اللغة.تنفيذ الطلبات: جدول معالجة الطلبات الكامل، قائمة منسدلة لتحديث الحالة مباشرة، نافذة تفاصيل شحن العميل، تفصيل العناصر، وإنشاء الفواتير.أدوات التصدير: تصдор سريع بضغطة واحدة بصيغة CSV للمخزون والطلبات/السجلات الضريبية، بالإضافة إلى تقارير PDF تنفيذية قابلة للطباعة.4. البنية الزمنية الحقيقية ودعم Supabase الثنائيالوضع المزدوج (Dual-Mode): محملة مسبقاً ببيانات وهمية ثنائية اللغة واقعية ومفصلة تُحفظ في تخزين المتصفح، مع مزامنة فورية بين علامات التبويب وأصوات تنبيه تفاعلية.Supabase Realtime: مخطط PostgreSQL كامل متوفر في مسار supabase/schema.sql مع سياسات الأمان (RLS) والمشغلات الزمنية. بمجرد إعداد مفاتيح Supabase، يتم الاتصال تلقائياً بقنوات Postgres الحية!تنبيهات الأصوات والإشعارات: عند إتمام أي طلب من المتجر، تتلقى لوحة التحكم تنبيهاً فورياً، مع تشغيل نغمة جرس فاخرة وعرض إشعار تفاعلي (Toast) دون الحاجة لإعادة تحميل الصفحة.🚀 البدء السريع (Getting Started)1. تثبيت الحزم DependenciesBashnpm install
-2. تشغيل خادم التطويرBashnpm run dev
-افتح الرابط http://localhost:3000 في متصفحك.3. البناء للإنتاج (Production)Bashnpm run build
-npm start
-🗄️ إعدادات Supabase (اختياري للمزامنة السحابية)للاتصال بمشروعك الخاص على Supabase:أنشئ مشروعاً جديداً عبر supabase.com.توجه إلى محرر SQL في Supabase وقم بتشغيل السكريبت الموجود في المسار supabase/schema.sql.أنشئ ملف .env.local في جذر المشروع وأضف المتغيرات التالية:Code snippetNEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key-here
-أعد تشغيل خادم التطوير لتفعيل المزامنة الفورية وقواعد البيانات تلقائياً!📁 هيكل المشروع (Project Structure)Plaintexthakim-store/
-├── supabase/
-│   └── schema.sql                  # Complete Postgres SQL schema, RLS, triggers & seed
-├── src/
-│   ├── app/
-│   │   ├── layout.tsx              # Root layout with Theme, i18n & Toast providers
-│   │   ├── page.tsx                # Storefront Home Page
-│   │   ├── globals.css             # RTL/LTR, Cairo & Inter fonts, luxury gold theme
-│   │   ├── products/
-│   │   │   ├── page.tsx            # Catalog & Advanced Filtering
-│   │   │   └── [id]/page.tsx       # Product Details & Reviews
-│   │   ├── cart/page.tsx           # Full Cart View
-│   │   ├── checkout/
-│   │   │   ├── page.tsx            # Validated Checkout Form
-│   │   │   └── success/page.tsx    # Order Success & Tracking
-│   │   ├── account/page.tsx        # Customer Profile & Order History
-│   │   └── admin/
-│   │       ├── layout.tsx          # Admin Dashboard Layout & Live Topbar
-│   │       ├── page.tsx            # Analytics & Recharts Overview
-│   │       ├── products/page.tsx   # Product CRUD & Inventory Table
-│   │       ├── orders/page.tsx     # Order Fulfillment & Status Changer
-│   │       └── reports/page.tsx    # CSV & PDF Export Tools
-│   ├── components/
-│   │   ├── common/                 # Navbar, Footer, LanguageSwitcher, ThemeToggle, CartDrawer, Search
-│   │   ├── home/                   # HeroBanner, CategoryGrid, FeaturedProducts, PromoBanner, Testimonials
-│   │   ├── products/               # ProductCard, ProductGallery, ProductFilters, ReviewsSection
-│   │   ├── admin/                  # AdminSidebar, AdminHeader, AnalyticsCharts, ProductModal, OrderDetailsModal
-│   │   └── ui/                     # Button, Badge, Input, Modal primitives
-│   ├── context/
-│   │   ├── I18nContext.tsx         # Bilingual RTL/LTR Context & Formatter
-│   │   └── RealtimeNotificationContext.tsx # Order Alert Chimes & Supabase Realtime
-│   ├── store/
-│   │   ├── cartStore.ts            # Persistent Zustand Cart with Discounts
-│   │   └── productStore.ts         # Zustand Products, Orders & Reviews CRUD
-│   ├── locales/
-│   │   ├── ar.ts                   # Arabic translations
-│   │   └── en.ts                   # English translations
-│   ├── lib/
-│   │   ├── data.ts                 # Initial luxury seed catalog & orders
-│   │   ├── exportUtils.ts          # CSV and printable invoice generator
-│   │   ├── supabase.ts             # Supabase client & event bus
-│   │   └── utils.ts                # Currency and date utilities
-│   └── types/
-│       └── index.ts                # Strict TypeScript interfaces
+# 👑 متجر حكيم | Hakim Store
+### Luxury Bilingual (Arabic RTL & English LTR) E-Commerce & Admin Platform
+
+منصة تجارة إلكترونية متكاملة، جاهزة للإنتاج، وعالية الأداء مع لوحة تحكم إدارية مدمجة، مبنية باستخدام **Next.js (App Router)**، **TypeScript**، **Tailwind CSS**، **Framer Motion**، **Lucide React**، **Zustand**، **Recharts**، **React Hook Form + Zod**، و **Supabase**.
+
+---
+
+## 🌟 أبرز الميزات والقدرات (Key Capabilities & Features)
+
+### 1. التجربة ثنائية اللغة والتوافق التام مع الاتجاهين (RTL / LTR)
+* **تبديل الفوري للغة**: التبديل بسلاسة بين **العربية (RTL)** بخط Cairo و **الإنجليزية (LTR)** بخط Inter عبر المتجر ولوحة التحكم بالكامل.
+* **دعم اتجاهات الواجهة**: عكس الأيقونات تلقائياً، محاذاة مرآوية، وعملات منسقة (`SAR` / `ر.س`).
+* **الوضع الداكن والفاتح**: تبديل سلس بين ثيمات الفخامة مع انتقالات مرنة.
+
+### 2. واجهة المتجر (Storefront)
+* **الصفحة الرئيسية**: بانر ترويجي متحرك (Hero)، بطاقات أقسام منسقة مع عدادات، تبويب لأبرز القطع الفاخرة، عداد تنازلي للعروض، وآراء العملاء.
+* **الكتالوج والبحث الفوري**: نافذة بحث فورية بختم زمني (`Ctrl+K` / `⌘K`)، أزرار ترشيح الأقسام، شريط تصفية السعر، تصفية التقييمات، مفاتيح توفر المخزون، وخيارات الفرز (السعر، التقييم، الأحدث، المميز).
+* **تفاصيل المنتج**: معرض صور متعدد الزوايا مع تبديل المصغرات والتكبير، محدد الألوان والأحجام مع تحديث السعر الحي، مؤشر حالة المخزون اللحظي، محدد الكمية، قائمة المواصفات المنسدلة، وقسم تقييمات العملاء.
+* **سلة تسوق مستمرة**: درج جانبي بتأثيرات Framer Motion، حفظ البيانات في LocalStorage، شريط تقدم الشحن المجاني، محرك أكواد خصم (`HAKIM10`, `WELCOME20`, `LUXURY50`)، وحساب ضريبة القيمة المضافة الديناميكية (15%).
+* **إتمام الطلب (Checkout)**: نموذج مدقق (Zod + React Hook Form)، طرق دفع متعددة (مدى، Apple Pay، محاكاة بطاقة الائتمان، الدفع عند الاستلام)، وإنشاء الطلبات.
+* **تتبع الطلبات وتأكيدها**: احتفال احتفالي بقصاصات الذهب (Confetti)، خط زمني حي لتنفيذ الطلب (قيد الانتظار $\to$ المعالجة $\to$ الشحن $\to$ التوصيل)، ومولد فواتير ضريبية قابل للطباعة.
+* **حساب العميل والتقييمات**: نظرة عامة على الملف الشخصي، سجل الطلبات مع تفاصيل التواريخ، العناوين المحفوظة، ونوافذ التقييم التفاعلية مع رفع الصور والتقييم بالنجوم.
+
+### 3. لوحة تحكم الإدارة التنفيذية (`/admin`)
+* **نظرة عامة على التحليلات**: بطاقات مؤشرات الأداء الرئيسية (إجمالي الإيرادات، إجمالي الطلبات، المخزون النشط، العملاء، متوسط قيمة الطلب) مدعومة بمخططات تفاعلية عبر **Recharts** (مخطط الإيرادات اليومية، مخطط مبيعات الفئات، وتغذية المعاملات الحية).
+* **إدارة المنتجات (CRUD بالكامل)**: جدول بيانات مع فلاتر للبحث والفئات، تنبيهات مستويات المخزون، ونوافذ لإضافة وتعديل وحذف المنتجات بتفاصيل ثنائية اللغة.
+* **تنفيذ الطلبات**: جدول معالجة الطلبات الكامل، قائمة منسدلة لتحديث الحالة مباشرة، نافذة تفاصيل شحن العميل، تفصيل العناصر، وإنشاء الفواتير.
+* **أدوات التصدير**: تصدير سريع بضغطة واحدة بصيغة CSV للمخزون والطلبات/السجلات الضريبية، بالإضافة إلى تقارير PDF تنفيذية قابلة للطباعة.
+
+### 4. البنية الزمنية الحقيقية ودعم Supabase الثنائي
+* **الوضع المزدوج (Dual-Mode)**: محملة مسبقاً ببيانات وهمية ثنائية اللغة واقعية ومفصلة تُحفظ في تخزين المتصفح، مع مزامنة فورية بين علامات التبويب وأصوات تنبيه تفاعلية.
+* **Supabase Realtime**: مخطط PostgreSQL كامل متوفر في مسار `supabase/schema.sql` مع سياسات الأمان (RLS) والمشغلات الزمنية. بمجرد إعداد مفاتيح Supabase، يتم الاتصال تلقائياً بقنوات Postgres الحية!
+* **تنبيهات الأصوات والإشعارات**: عند إتمام أي طلب من المتجر، تتلقى لوحة التحكم تنبيهاً فورياً، مع تشغيل نغمة جرس فاخرة وعرض إشعار تفاعلي (Toast) دون الحاجة لإعادة تحميل الصفحة.
+
+---
+
+## 🚀 البدء السريع (Getting Started)
+
+### 1. تثبيت الحزم Dependencies
+```bash
+npm install
