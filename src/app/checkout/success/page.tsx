@@ -15,7 +15,7 @@ import {
   MapPin,
   Zap,
 } from 'lucide-react';
-import { useProductStore } from '@/store/productStore';
+import { useOrderStore } from '@/store/orderStore';
 import { useI18n } from '@/context/I18nContext';
 import { Button } from '@/components/ui/Button';
 import { printOrderInvoice } from '@/lib/exportUtils';
@@ -26,9 +26,9 @@ function OrderSuccessContent() {
   const orderNumber = searchParams.get('orderNumber') || 'HKM-9104';
 
   const { language, t, formatPrice, isRtl } = useI18n();
-  const getOrderByNumber = useProductStore((s) => s.getOrderByNumber);
+  const orders = useOrderStore((s) => s.orders);
 
-  const order = getOrderByNumber(orderNumber) || useProductStore((s) => s.orders[0]);
+  const order = orders.find((item) => item.orderNumber === orderNumber) || orders[0];
 
   useEffect(() => {
     try {

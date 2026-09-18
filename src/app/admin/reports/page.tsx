@@ -87,7 +87,7 @@ export default function AdminReportsPage() {
             <span className="text-xs font-semibold text-muted-foreground font-mono">
               {products.length} {t.common.items}
             </span>
-            <Button onClick={handleExportProducts} variant="gold" size="sm" className="gap-2 font-bold">
+            <Button onClick={handleExportProducts} variant="primary" size="sm" className="gap-2 font-bold">
               <Download className="w-4 h-4" />
               <span>{language === 'ar' ? 'تحميل CSV' : 'Download CSV'}</span>
             </Button>
@@ -114,7 +114,7 @@ export default function AdminReportsPage() {
             <span className="text-xs font-semibold text-muted-foreground font-mono">
               {orders.length} {language === 'ar' ? 'طلبات' : 'orders'} ({formatPrice(metrics.totalRevenue)})
             </span>
-            <Button onClick={handleExportOrders} variant="gold" size="sm" className="gap-2 font-bold">
+            <Button onClick={handleExportOrders} variant="primary" size="sm" className="gap-2 font-bold">
               <Download className="w-4 h-4" />
               <span>{language === 'ar' ? 'تحميل CSV' : 'Download CSV'}</span>
             </Button>

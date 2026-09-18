@@ -3,8 +3,10 @@
  * Handles products, categories, reviews, coupons, and orders
  */
 
-import { supabase } from './supabase';
+import { supabase as nullableSupabase } from './supabase';
 import { Product, Category, Review, Coupon, Order } from '@/types';
+
+const supabase = nullableSupabase as NonNullable<typeof nullableSupabase>;
 
 // ============================================================================
 // PRODUCTS SERVICE
@@ -79,7 +81,6 @@ export const productsService = {
       features_ar: productData.features?.ar || [],
       price: productData.price,
       compare_at_price: productData.compareAtPrice,
-      category_id: productData.categoryId,
       category_slug: productData.category,
       images: productData.images || [],
       thumbnail: productData.thumbnail,
@@ -387,7 +388,7 @@ export const couponsService = {
       expires_at: couponData.expiresAt,
       description_en: couponData.description?.en,
       description_ar: couponData.description?.ar,
-      is_active: couponData.isActive !== false,
+      is_active: true,
     };
 
     const { data, error } = await supabase
@@ -414,8 +415,6 @@ export const couponsService = {
       dbUpdates.description_en = updates.description.en;
       dbUpdates.description_ar = updates.description.ar;
     }
-    if (updates.isActive !== undefined) dbUpdates.is_active = updates.isActive;
-
     const { data, error } = await supabase
       .from('coupons')
       .update(dbUpdates)
@@ -448,7 +447,6 @@ export const ordersService = {
     // First, create the order
     const dbOrder = {
       order_number: orderData.orderNumber,
-      customer_id: orderData.customerId,
       customer_name: orderData.customer.fullName,
       customer_email: orderData.customer.email,
       customer_phone: orderData.customer.phone,
@@ -605,7 +603,6 @@ function formatProduct(data: any): Product {
     price: data.price,
     compareAtPrice: data.compare_at_price,
     category: data.category_slug,
-    categoryId: data.category_id,
     images: data.images || [],
     thumbnail: data.thumbnail,
     stock: data.stock,
@@ -671,8 +668,6 @@ function formatCoupon(data: any): Coupon {
     maxDiscount: data.max_discount,
     expiresAt: data.expires_at,
     description: { en: data.description_en, ar: data.description_ar },
-    isActive: data.is_active,
-    createdAt: data.created_at,
   };
 }
 
@@ -684,7 +679,6 @@ function formatOrder(data: any): Order {
   return {
     id: data.id,
     orderNumber: data.order_number,
-    customerId: data.customer_id,
     customer: {
       fullName: data.customer_name,
       phone: data.customer_phone,
@@ -709,7 +703,6 @@ function formatOrder(data: any): Order {
     trackingNumber: data.tracking_number,
     timeline: data.timeline || [],
     createdAt: data.created_at,
-    updatedAt: data.updated_at,
   };
 }
 

@@ -49,22 +49,22 @@ export default function AdminOverviewPage() {
 
   // Placeholder sales trend data for charts
   const salesTrend = [
-    { name: 'Mon', sales: 2400, revenue: 2210 },
-    { name: 'Tue', sales: 1398, revenue: 2290 },
-    { name: 'Wed', sales: 9800, revenue: 2000 },
-    { name: 'Thu', sales: 3908, revenue: 2108 },
-    { name: 'Fri', sales: 4800, revenue: 2105 },
-    { name: 'Sat', sales: 3800, revenue: 2180 },
-    { name: 'Sun', sales: 4300, revenue: 2250 },
+    { date: 'Mon', orders: 2400, revenue: 2210 },
+    { date: 'Tue', orders: 1398, revenue: 2290 },
+    { date: 'Wed', orders: 9800, revenue: 2000 },
+    { date: 'Thu', orders: 3908, revenue: 2108 },
+    { date: 'Fri', orders: 4800, revenue: 2105 },
+    { date: 'Sat', orders: 3800, revenue: 2180 },
+    { date: 'Sun', orders: 4300, revenue: 2250 },
   ];
 
   // Placeholder category sales data
   const categorySales = [
-    { category: 'Audio', value: 2400 },
-    { category: 'Chargers', value: 1398 },
-    { category: 'Wearables', value: 9800 },
-    { category: 'Power Banks', value: 3908 },
-    { category: 'Accessories', value: 4800 },
+    { category: 'Audio', sales: 2400, percentage: 20 },
+    { category: 'Chargers', sales: 1398, percentage: 12 },
+    { category: 'Wearables', sales: 9800, percentage: 35 },
+    { category: 'Power Banks', sales: 3908, percentage: 15 },
+    { category: 'Accessories', sales: 4800, percentage: 18 },
   ];
 
   const ArrowIcon = isRtl ? ArrowLeft : ArrowRight;
@@ -115,7 +115,7 @@ export default function AdminOverviewPage() {
 
         <div className="flex items-center gap-2">
           <Link href="/admin/products">
-            <Button variant="gold" size="sm" className="gap-1.5 font-bold">
+            <Button variant="primary" size="sm" className="gap-1.5 font-bold">
               <Plus className="w-4 h-4" />
               <span>{t.admin.products.addNew}</span>
             </Button>
@@ -204,7 +204,7 @@ export default function AdminOverviewPage() {
                             : order.status === 'processing'
                             ? 'default'
                             : order.status === 'shipped'
-                            ? 'gold'
+                            ? 'default'
                             : 'warning'
                         }
                         className="capitalize text-[10px]"
@@ -223,7 +223,7 @@ export default function AdminOverviewPage() {
               ) : (
                 <tr>
                   <td colSpan={6} className="py-8 text-center text-muted-foreground">
-                    {t.admin.orders.noOrders || 'No orders yet. Start selling!'}
+                    {t.account.noOrders}
                   </td>
                 </tr>
               )}

@@ -157,7 +157,7 @@ export function InstantSearchModal({ isOpen, onClose }: InstantSearchModalProps)
                         {language === 'ar' ? product.title.ar : product.title.en}
                       </h4>
                       {product.isBestSeller && (
-                        <Badge variant="gold" className="text-[10px] px-1.5 py-0">
+                        <Badge variant="default" className="text-[10px] px-1.5 py-0">
                           {language === 'ar' ? 'الأكثر مبيعاً' : 'Best Seller'}
                         </Badge>
                       )}

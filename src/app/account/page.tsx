@@ -30,7 +30,9 @@ export default function AccountPage() {
   const orders = useOrderStore((s) => s.orders ?? []);
   
   // تم تصحيح القيمة الافتراضية هنا إلى مصفوفة فارغة لتتوافق مع أنواع البيانات
-  const reviews = useProductStore((s) => s.reviews ?? []);
+  const reviewMap = useProductStore((s) => s.reviews);
+  const reviews = Object.values(reviewMap).flat();
+  const reviewCount = reviews.length;
 
   const [activeTab, setActiveTab] = useState<'orders' | 'profile' | 'addresses' | 'reviews'>('orders');
   const [expandedOrderId, setExpandedOrderId] = useState<string | null>(null);
@@ -82,7 +84,7 @@ export default function AccountPage() {
               <span>{t.account.tabs.orders}</span>
             </div>
             <div className="text-center p-3 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-border min-w-24">
-              <span className="text-base font-bold text-foreground block">{reviews.length}</span>
+              <span className="text-base font-bold text-foreground block">{reviewCount}</span>
               <span>{t.account.tabs.reviews}</span>
             </div>
           </div>

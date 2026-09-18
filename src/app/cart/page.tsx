@@ -37,12 +37,12 @@ export default function CartPage() {
   const freeShippingRemaining = getFreeShippingRemaining();
   const freeShippingPercent = Math.min(100, Math.round((subtotal / FREE_SHIPPING_THRESHOLD) * 100));
 
-  const handleApplyCoupon = (e: React.FormEvent) => {
+  const handleApplyCoupon = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!couponInput.trim()) return;
 
     setCouponError(null);
-    const result = applyCoupon(couponInput);
+    const result = await applyCoupon(couponInput);
 
     if (result.success) {
       setCouponSuccess(true);

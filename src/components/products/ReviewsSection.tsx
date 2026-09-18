@@ -16,8 +16,8 @@ interface ReviewsSectionProps {
 
 export function ReviewsSection({ product }: ReviewsSectionProps) {
   const { language, t } = useI18n();
-  const reviews = useProductStore((s) => s.getReviewsByProductId(product.id));
-  const addReview = useProductStore((s) => s.addReview);
+  const reviews = useProductStore((s) => s.reviews[product.id] ?? []);
+  const createReview = useProductStore((s) => s.createReview);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [userName, setUserName] = useState('');
@@ -35,17 +35,19 @@ export function ReviewsSection({ product }: ReviewsSectionProps) {
     percentage: totalReviews > 0 ? Math.round((reviews.filter((r) => r.rating === star).length / totalReviews) * 100) : 0,
   }));
 
-  const handleSubmitReview = (e: React.FormEvent) => {
+  const handleSubmitReview = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!userName.trim() || !comment.trim()) return;
 
-    addReview({
+    await createReview({
       productId: product.id,
       userName: userName.trim(),
       rating,
       title: title.trim() || (language === 'ar' ? 'أداء ممتاز' : 'Great Performance'),
       comment: comment.trim(),
+      date: new Date().toISOString(),
       verifiedPurchase: true,
+      helpfulCount: 0,
     });
 
     setSubmittedMessage(true);

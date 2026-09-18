@@ -50,8 +50,10 @@ export default function AdminOrdersPage() {
     updateOrderStatus(
       orderId,
       status,
-      `Order status updated to ${status}`,
-      `تم تحديث حالة الطلب إلى ${status}`
+      {
+        en: `Order status updated to ${status}`,
+        ar: `تم تحديث حالة الطلب إلى ${status}`,
+      }
     );
   };
 
@@ -62,7 +64,7 @@ export default function AdminOrdersPage() {
       case 'processing':
         return <Badge variant="default">{t.account.statusProcessing}</Badge>;
       case 'shipped':
-        return <Badge variant="gold">{t.account.statusShipped}</Badge>;
+        return <Badge variant="default">{t.account.statusShipped}</Badge>;
       case 'delivered':
         return <Badge variant="success">{t.account.statusDelivered}</Badge>;
       case 'cancelled':

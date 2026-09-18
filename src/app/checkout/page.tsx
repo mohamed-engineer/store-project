@@ -19,7 +19,7 @@ import {
   CheckCircle2,
 } from 'lucide-react';
 import { useCartStore } from '@/store/cartStore';
-import { useProductStore } from '@/store/productStore';
+import { useOrderStore } from '@/store/orderStore';
 import { useI18n } from '@/context/I18nContext';
 import { PaymentMethod, OrderItem } from '@/types';
 import { Button } from '@/components/ui/Button';
@@ -58,7 +58,7 @@ export default function CheckoutPage() {
     clearCart,
   } = useCartStore();
 
-  const addOrder = useProductStore((s) => s.addOrder);
+  const createOrder = useOrderStore((s) => s.createOrder);
 
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>('mada');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -115,7 +115,7 @@ export default function CheckoutPage() {
       variantInfo: [item.selectedVolume, item.selectedSize, item.selectedColor].filter(Boolean).join(', '),
     }));
 
-    const createdOrder = addOrder({
+    const createdOrder = await createOrder({
       orderNumber,
       customer: {
         fullName: data.fullName,
@@ -139,6 +139,7 @@ export default function CheckoutPage() {
       paymentStatus: paymentMethod === 'cod' ? 'pending' : 'paid',
       couponCode: couponCode || undefined,
       trackingNumber: `SMSA-${Math.floor(10000000 + Math.random() * 90000000)}`,
+      timeline: [],
     });
 
     clearCart();

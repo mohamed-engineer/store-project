@@ -39,9 +39,11 @@ export async function submitReview(payload: ReviewSubmissionPayload): Promise<Re
       userName: payload.userName || 'Anonymous',
       userAvatar: payload.userAvatar,
       rating: payload.rating,
-      title: payload.title,
+      title: payload.title || 'Review',
       comment: payload.comment,
+      date: new Date().toISOString(),
       verifiedPurchase: payload.verifiedPurchase || false,
+      helpfulCount: 0,
       images: payload.images,
     });
 

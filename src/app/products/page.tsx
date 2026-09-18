@@ -189,7 +189,7 @@ function CatalogContent() {
               <div className="p-16 text-center rounded-3xl bg-card border border-dashed border-border space-y-4">
                 <p className="text-base font-bold text-foreground">{t.catalog.noProducts}</p>
                 <p className="text-xs text-muted-foreground">{t.catalog.noProductsSub}</p>
-                <Button onClick={handleResetFilters} variant="gold" size="sm">
+                <Button onClick={handleResetFilters} variant="primary" size="sm">
                   {t.catalog.clearFilters}
                 </Button>
               </div>

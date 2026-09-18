@@ -26,12 +26,10 @@ export function OrderDetailsModal({ isOpen, onClose, order }: OrderDetailsModalP
 
   const handleStatusChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newStatus = e.target.value as OrderStatus;
-    updateOrderStatus(
-      order.id,
-      newStatus,
-      `Status updated to ${newStatus} by admin`,
-      `تم تحديث الحالة إلى ${newStatus} بواسطة الإدارة`
-    );
+    updateOrderStatus(order.id, newStatus, {
+      en: `Status updated to ${newStatus} by admin`,
+      ar: `تم تحديث الحالة إلى ${newStatus} بواسطة الإدارة`,
+    });
   };
 
   return (

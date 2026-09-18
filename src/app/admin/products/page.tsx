@@ -103,7 +103,7 @@ export default function AdminProductsPage() {
             {language === 'ar' ? 'تصدير CSV' : 'Export CSV'}
           </Button>
 
-          <Button onClick={handleOpenAdd} variant="gold" size="sm" className="gap-1.5 font-bold">
+          <Button onClick={handleOpenAdd} variant="primary" size="sm" className="gap-1.5 font-bold">
             <Plus className="w-4 h-4" />
             <span>{t.admin.products.addNew}</span>
           </Button>
