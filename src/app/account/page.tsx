@@ -28,7 +28,9 @@ import { OrderStatus } from '@/types';
 export default function AccountPage() {
   const { language, t, formatPrice } = useI18n();
   const orders = useOrderStore((s) => s.orders ?? []);
-  const reviews = useProductStore((s) => s.reviews ?? {});
+  
+  // تم تصحيح القيمة الافتراضية هنا إلى مصفوفة فارغة لتتوافق مع أنواع البيانات
+  const reviews = useProductStore((s) => s.reviews ?? []);
 
   const [activeTab, setActiveTab] = useState<'orders' | 'profile' | 'addresses' | 'reviews'>('orders');
   const [expandedOrderId, setExpandedOrderId] = useState<string | null>(null);
